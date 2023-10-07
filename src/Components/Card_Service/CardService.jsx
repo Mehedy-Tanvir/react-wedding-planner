@@ -3,11 +3,11 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 const CardService = ({ service }) => {
   return (
-    <div className="shadow-xl card bg-base-100">
+    <div className="overflow-hidden shadow-xl card bg-base-100">
       <div>
         <figure>
           <img
-            className="w-full rounded-t-xl h-[300px] object-cover"
+            className="w-full rounded-t-xl hover:scale-110 transition-scale duration-300 ease-in-out h-[300px] object-cover"
             src={service?.image_card}
             alt="image"
           />
