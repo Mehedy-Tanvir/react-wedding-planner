@@ -66,7 +66,7 @@ const Navbar = () => {
   );
   return (
     <div className="container flex items-center justify-between px-2 py-4 mx-auto font-roboto">
-      <img className="w-[200px] md:w-[300px]" src="/logo3.png" alt="logo" />
+      <img className="w-[200px] md:w-[300px]" src="/logo.png" alt="logo" />
       <ul className="lg:flex hidden items-center uppercase justify-between gap-[60px]">
         {links}
       </ul>

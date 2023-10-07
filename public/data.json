@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "image_card": "https://i.ibb.co/V2DCwHM/wedding1.webp",
+    "image_details": "https://i.ibb.co/V2DCwHM/wedding1.webp",
+    "price": 40000,
+    "title": "Full-Service Wedding Planning",
+    "description_short": "Comprehensive wedding planning with venue selection, vendor coordination, and stress-free execution.",
+    "description_full": "Our full-service wedding planning package offers comprehensive assistance in planning every aspect of your dream wedding. From venue selection to vendor coordination, we take care of all the details, ensuring a stress-free experience for you. Our dedicated team of experienced planners will work closely with you to bring your vision to life, creating a wedding day that is truly unforgettable."
+  },
+  {
+    "id": 2,
+    "image_card": "https://i.ibb.co/GkScMfD/wedding2.jpg",
+    "image_details": "https://i.ibb.co/GkScMfD/wedding2.jpg",
+    "price": 29000,
+    "title": "Day-of Coordination",
+    "description_short": "Smooth wedding day management, including timelines, vendor coordination, and issue handling.",
+    "description_full": "Our day-of coordination service ensures that your wedding day runs smoothly. We manage timelines, coordinate vendors, and handle any unexpected issues, allowing you to relax and enjoy your special day. Our experienced team will be there from the early preparations to the final farewell, ensuring that every detail is executed flawlessly."
+  },
+  {
+    "id": 3,
+    "image_card": "https://i.ibb.co/vj1s96c/wedding3.jpg",
+    "image_details": "https://i.ibb.co/vj1s96c/wedding3.jpg",
+    "price": 20000,
+    "title": "Vendor Sourcing and Management",
+    "description_short": "Expert vendor selection, contract negotiation, and communication management.",
+    "description_full": "We understand the importance of selecting the right wedding vendors. Our vendor sourcing and management service helps you find the perfect suppliers for your wedding day. We negotiate contracts, schedule meetings, and manage vendor communications throughout the planning process, ensuring that your wedding vision becomes a reality."
+  },
+  {
+    "id": 4,
+    "image_card": "https://i.ibb.co/cNMhF70/wedding4.webp",
+    "image_details": "https://i.ibb.co/cNMhF70/wedding4.webp",
+    "price": 49000,
+    "title": "Decor and Theme Design",
+    "description_short": "Custom decor planning with color schemes, themes, and creative elements.",
+    "description_full": "Elevate the aesthetics of your wedding with our decor and theme design service. Our team will collaborate with you to create a cohesive design and decor plan, including color schemes, themes, and decor elements that reflect your style and preferences. We'll transform your wedding venue into a visually stunning and magical space that perfectly complements your vision."
+  },
+  {
+    "id": 5,
+    "image_card": "https://i.ibb.co/SJRRtx8/wedding5.jpg",
+    "image_details": "https://i.ibb.co/SJRRtx8/wedding5.jpg",
+    "price": 20000,
+    "title": "Guest Management",
+    "description_short": "Seamless guest experience, including accommodations, transportation, and hospitality.",
+    "description_full": "Make your guests' experience memorable with our guest management service. We take care of all the details, including accommodations, transportation logistics, and hospitality services. Your wedding guests will feel welcomed and well-taken-care-of, allowing them to fully enjoy and celebrate your special day."
+  },
+  {
+    "id": 6,
+    "image_card": "https://imagizer.imageshack.com/img923/3953/OoYg3w.jpg",
+    "image_details": "https://imagizer.imageshack.com/img923/3953/OoYg3w.jpg",
+    "price": 15000,
+    "title": "Partial Wedding Planning",
+    "description_short": "Tailored assistance for specific wedding aspects, perfect for couples in progress.",
+    "description_full": "For couples who have already started planning, our partial planning service offers assistance with specific aspects of your wedding, tailored to your needs. We'll provide expert guidance and support where you need it most, ensuring that your wedding day is everything you've dreamed of."
+  }
+]
