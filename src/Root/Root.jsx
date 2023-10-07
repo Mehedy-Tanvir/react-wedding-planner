@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../Components/Navbar/Navbar";
 import NavbarBlack from "../Components/Navbar/NavbarBlack";
+import Footer from "../Components/Footer/Footer";
 
 const Root = () => {
   const location = useLocation();
@@ -15,6 +16,8 @@ const Root = () => {
         <NavbarBlack></NavbarBlack>
       )}
       <Outlet></Outlet>
+      <div className="mb-10"></div>
+      <Footer></Footer>
     </div>
   );
 };
