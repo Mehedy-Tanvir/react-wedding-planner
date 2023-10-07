@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { useState } from "react";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="container px-2 mx-auto">
       <div className=" hero">
@@ -26,13 +29,30 @@ const Login = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input
-                  name="password"
-                  type="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                  required
-                />
+                <div className="relative">
+                  <input
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="password"
+                    className="input input-bordered"
+                    required
+                  />
+                  {showPassword ? (
+                    <AiOutlineEyeInvisible
+                      onClick={() => {
+                        setShowPassword(!showPassword);
+                      }}
+                      className="absolute text-2xl top-3 right-3"
+                    ></AiOutlineEyeInvisible>
+                  ) : (
+                    <AiOutlineEye
+                      onClick={() => {
+                        setShowPassword(!showPassword);
+                      }}
+                      className="absolute text-2xl top-3 right-3"
+                    ></AiOutlineEye>
+                  )}
+                </div>
               </div>
               <div className="mt-6 form-control">
                 <button className="bg-[#6C2C71] hover:opacity-90 text-white text-3xl h-[60px] px-[20px] rounded-none">

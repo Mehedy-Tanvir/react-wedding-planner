@@ -7,7 +7,7 @@ const CardService = ({ service }) => {
       <div>
         <figure>
           <img
-            className="w-full rounded-t-xl hover:scale-110 transition-scale duration-300 ease-in-out h-[300px] object-cover"
+            className="w-full rounded-t-xl hover:scale-110 transition-scale duration-300 ease-in-out h-[300px] object-cover object-center"
             src={service?.image_card}
             alt="image"
           />

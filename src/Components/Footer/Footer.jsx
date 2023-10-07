@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="p-10 footer text-neutral-content bg-[#272525]">
       <nav>
         <header className="text-white">
-          <img className="h-[50px]" src="/logo.png" alt="" />
+          <img className="h-[100px]" src="/logo.png" alt="" />
         </header>
       </nav>
       <nav>
