@@ -1,9 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const { googleSignIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(navigate("/"))
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="container px-2 mx-auto">
       <div className=" hero">
@@ -58,7 +66,11 @@ const Login = () => {
                 <button className="bg-[#6C2C71] hover:opacity-90 text-white text-3xl h-[60px] px-[20px] rounded-none">
                   Login
                 </button>
-                <button className="h-[40px] mt-4 w-full text-center border border-[#6C2C71] font-medium text-[#6C2C71] rounded-3xl">
+                <button
+                  type="button"
+                  className="h-[40px] mt-4 w-full text-center border border-[#6C2C71] font-medium text-[#6C2C71] rounded-3xl"
+                  onClick={handleGoogleSignIn}
+                >
                   Sign In With Google
                 </button>
                 <p className="mt-4 font-medium text-center text-gray-600">
