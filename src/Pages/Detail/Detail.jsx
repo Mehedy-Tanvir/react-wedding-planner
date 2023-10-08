@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import Error from "../Error/Error";
 
 const Detail = () => {
@@ -16,9 +16,11 @@ const Detail = () => {
         />
         <div className="w-full h-full max-w-[80%] max-h-[80%] mt-5">
           <div className="flex flex-col items-center justify-start gap-4 md:flex-row">
-            <button className="bg-[#6C2C71] hover:opacity-90 text-white text-3xl h-[60px] px-[20px] rounded-none">
-              Buy Now
-            </button>
+            <Link to="/payment">
+              <button className="bg-[#6C2C71] hover:opacity-90 text-white text-3xl h-[60px] px-[20px] rounded-none">
+                Buy Now
+              </button>
+            </Link>
             <h1 className="text-3xl text-[#6C2C71]">
               Price: ${service?.price}
             </h1>

@@ -7,6 +7,7 @@ import Login from "../Pages/Login/Login";
 import Detail from "../Pages/Detail/Detail";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 import PrivateRoutes from "./PrivateRoutes";
+import Payment from "../Pages/Payment/Payment";
 
 const Routes = createBrowserRouter([
   {
@@ -43,6 +44,14 @@ const Routes = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: () => fetch("/data.json"),
+      },
+      {
+        path: "/payment",
+        element: (
+          <PrivateRoutes>
+            <Payment></Payment>
+          </PrivateRoutes>
+        ),
       },
     ],
   },
