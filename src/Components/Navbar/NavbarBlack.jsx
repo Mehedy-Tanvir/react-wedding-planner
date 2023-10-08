@@ -29,20 +29,6 @@ const NavbarBlack = () => {
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "lg:text-[#6C2C70] text-[18px] underline"
-              : "lg:text-[#111] text-[18px]"
-          }
-          to="/about"
-        >
-          About
-        </NavLink>
-      </li>
       {loading && !user && (
         <li>
           <NavLink
@@ -75,9 +61,21 @@ const NavbarBlack = () => {
           </NavLink>
         </li>
       )}
-
       {user && !loading && (
-        <li className="lg:text-[#111] text-[18px]">{user?.displayName}</li>
+        <li className="order-first md:ml-0 lg:text-[#111] text-[18px]">
+          <div className="flex flex-col items-start justify-center gap-2 lg:items-center lg:flex-row">
+            <img
+              className="h-[40px] w-[40px] object-cover object-center rounded-[50%] mr-2"
+              src={
+                user?.photoURL
+                  ? user.photoURL
+                  : "https://imagizer.imageshack.com/img923/6317/jRVw55.png"
+              }
+              alt=""
+            />
+            <p className="font-medium">{user?.displayName}</p>
+          </div>
+        </li>
       )}
       {user && !loading && (
         <li>
