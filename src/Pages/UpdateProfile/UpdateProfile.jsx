@@ -30,7 +30,7 @@ const UpdateProfile = () => {
               Update Profile!
             </h1>
           </div>
-          <div className="flex-shrink-0 w-full max-w-sm shadow-2xl card">
+          <div className="flex-shrink-0 w-full md:w-[400px] shadow-2xl card">
             <form onSubmit={handleSubmit} className="card-body">
               <div className="form-control">
                 <label className="label">

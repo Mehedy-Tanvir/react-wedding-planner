@@ -36,12 +36,12 @@ const Login = () => {
   return (
     <div className="container px-2 mx-auto">
       <Toaster />
-      <div className=" hero">
+      <div className="hero">
         <div className="flex-col hero-content">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl text-[#6C2C71] font-bold">Login now!</h1>
           </div>
-          <div className="flex-shrink-0 w-full max-w-sm shadow-2xl card">
+          <div className="flex-shrink-0 w-full md:w-[400px] shadow-2xl card">
             <form onSubmit={handleSubmit} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -64,7 +64,7 @@ const Login = () => {
                     name="password"
                     type={showPassword ? "text" : "password"}
                     placeholder="password"
-                    className="input input-bordered"
+                    className="w-full input input-bordered"
                     required
                   />
                   {showPassword ? (

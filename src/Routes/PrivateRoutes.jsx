@@ -9,10 +9,12 @@ const PrivateRoutes = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   if (loading) {
     return <h1>Loading...</h1>;
-  } else if (!user) {
-    return <Navigate state={location.pathname} to="/login"></Navigate>;
   } else {
-    return children;
+    if (!user) {
+      return <Navigate state={location.pathname} to="/login"></Navigate>;
+    } else {
+      return children;
+    }
   }
 };
 PrivateRoutes.propTypes = {
