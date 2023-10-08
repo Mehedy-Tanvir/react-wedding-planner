@@ -6,7 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { googleSignIn } = useContext(AuthContext);
+  const { googleSignIn, registerUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleGoogleSignIn = () => {
     googleSignIn()
@@ -15,11 +15,8 @@ const Register = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
-    const imageUrl = e.target.image.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(name, imageUrl, email, password);
     if (password.length < 6) {
       return toast.error("Password should be greater than 6 characters");
     } else if (!/[A-Z]/.test(password)) {
@@ -29,6 +26,14 @@ const Register = () => {
         "Password should contain at least one special character"
       );
     }
+    registerUser(email, password)
+      .then(() => {
+        e.target.email.value = "";
+        e.target.password.value = "";
+        toast.success("User registered successfully");
+        navigate("/");
+      })
+      .catch((error) => toast.error(error.message));
   };
   return (
     <div className="container px-2 mx-auto">
@@ -42,30 +47,6 @@ const Register = () => {
           </div>
           <div className="flex-shrink-0 w-full max-w-sm shadow-2xl card">
             <form onSubmit={handleSubmit} className="card-body">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Name</span>
-                </label>
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="name"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Image</span>
-                </label>
-                <input
-                  name="image"
-                  type="text"
-                  placeholder="image url"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>

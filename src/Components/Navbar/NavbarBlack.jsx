@@ -59,6 +59,22 @@ const NavbarBlack = () => {
           </NavLink>
         </li>
       )}
+      {user && !loading && (
+        <li>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? "lg:text-[#6C2C70] text-[18px] underline"
+                : "lg:text-[#111] text-[18px]"
+            }
+            to="/update_profile"
+          >
+            Update Profile
+          </NavLink>
+        </li>
+      )}
 
       {user && !loading && (
         <li className="lg:text-[#111] text-[18px]">{user?.displayName}</li>

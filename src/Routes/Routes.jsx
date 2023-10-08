@@ -5,6 +5,7 @@ import Error from "../Pages/Error/Error";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import Detail from "../Pages/Detail/Detail";
+import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 
 const Routes = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const Routes = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/update_profile",
+        element: <UpdateProfile></UpdateProfile>,
       },
       {
         path: "/service/:serviceId",

@@ -2,25 +2,41 @@ import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { googleSignIn } = useContext(AuthContext);
+  const { googleSignIn, logInUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then(navigate("/"))
       .catch((error) => console.log(error));
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    logInUser(email, password)
+      .then(() => {
+        e.target.email.value = "";
+        e.target.password.value = "";
+        navigate("/");
+        toast.success("User logged in successfully");
+      })
+      .catch((error) => toast.error(error.message));
+  };
   return (
     <div className="container px-2 mx-auto">
+      <Toaster />
       <div className=" hero">
         <div className="flex-col hero-content">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl text-[#6C2C71] font-bold">Login now!</h1>
           </div>
           <div className="flex-shrink-0 w-full max-w-sm shadow-2xl card">
-            <form className="card-body">
+            <form onSubmit={handleSubmit} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
