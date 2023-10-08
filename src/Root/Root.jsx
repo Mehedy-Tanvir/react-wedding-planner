@@ -15,7 +15,6 @@ const Root = () => {
         <NavbarBlack></NavbarBlack>
       )}
       <Outlet></Outlet>
-      <div className="mb-10"></div>
       <Footer></Footer>
     </div>
   );
