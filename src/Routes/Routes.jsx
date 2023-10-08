@@ -6,6 +6,7 @@ import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import Detail from "../Pages/Detail/Detail";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
+import PrivateRoutes from "./PrivateRoutes";
 
 const Routes = createBrowserRouter([
   {
@@ -28,11 +29,19 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/update_profile",
-        element: <UpdateProfile></UpdateProfile>,
+        element: (
+          <PrivateRoutes>
+            <UpdateProfile></UpdateProfile>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/service/:serviceId",
-        element: <Detail></Detail>,
+        element: (
+          <PrivateRoutes>
+            <Detail></Detail>
+          </PrivateRoutes>
+        ),
         loader: () => fetch("/data.json"),
       },
     ],

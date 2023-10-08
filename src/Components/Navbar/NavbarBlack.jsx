@@ -6,11 +6,14 @@ import { useContext } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 const NavbarBlack = () => {
-  const { user, loading, logoutUser } = useContext(AuthContext);
+  const { user, setLoading, logoutUser } = useContext(AuthContext);
 
   const handleLogout = () => {
     logoutUser()
-      .then(toast.success("Logged out successfully"))
+      .then(() => {
+        setLoading(false);
+        toast.success("Logged out successfully");
+      })
       .catch((error) => toast.error(error.message));
   };
   const links = (
@@ -29,7 +32,7 @@ const NavbarBlack = () => {
           Home
         </NavLink>
       </li>
-      {loading && !user && (
+      {!user && (
         <li>
           <NavLink
             className={({ isActive, isPending }) =>
@@ -45,7 +48,7 @@ const NavbarBlack = () => {
           </NavLink>
         </li>
       )}
-      {user && !loading && (
+      {user && (
         <li>
           <NavLink
             className={({ isActive, isPending }) =>
@@ -61,7 +64,7 @@ const NavbarBlack = () => {
           </NavLink>
         </li>
       )}
-      {user && !loading && (
+      {user && (
         <li className="order-first md:ml-0 lg:text-[#111] text-[18px]">
           <div className="flex flex-col items-start justify-center gap-2 lg:items-center lg:flex-row">
             <img
@@ -77,7 +80,7 @@ const NavbarBlack = () => {
           </div>
         </li>
       )}
-      {user && !loading && (
+      {user && (
         <li>
           <div
             onClick={handleLogout}
@@ -88,7 +91,7 @@ const NavbarBlack = () => {
           </div>
         </li>
       )}
-      {loading && !user && (
+      {!user && (
         <li>
           <NavLink
             to="/login"

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -8,6 +8,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { googleSignIn, logInUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then(navigate("/"))
@@ -22,7 +23,12 @@ const Login = () => {
       .then(() => {
         e.target.email.value = "";
         e.target.password.value = "";
-        navigate("/");
+        if (location.state) {
+          navigate(location.state);
+        } else {
+          navigate("/");
+        }
+
         toast.success("User logged in successfully");
       })
       .catch((error) => toast.error(error.message));

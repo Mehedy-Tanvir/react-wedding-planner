@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useContext, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
@@ -8,6 +8,7 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { googleSignIn, registerUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then(navigate("/"))
@@ -31,7 +32,11 @@ const Register = () => {
         e.target.email.value = "";
         e.target.password.value = "";
         toast.success("User registered successfully");
-        navigate("/");
+        if (location.state) {
+          navigate(location.state);
+        } else {
+          navigate("/");
+        }
       })
       .catch((error) => toast.error(error.message));
   };
