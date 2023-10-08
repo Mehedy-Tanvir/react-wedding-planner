@@ -8,7 +8,11 @@ const PrivateRoutes = ({ children }) => {
 
   const { user, loading } = useContext(AuthContext);
   if (loading) {
-    return <h1>Loading...</h1>;
+    return (
+      <div className="flex items-start justify-center h-[100vh]">
+        <span className="block loading loading-spinner loading-lg text-[#6C2C70]"></span>
+      </div>
+    );
   } else {
     if (!user) {
       return <Navigate state={location.pathname} to="/login"></Navigate>;
