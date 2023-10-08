@@ -1,9 +1,19 @@
 import PropTypes from "prop-types";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const CardService = ({ service }) => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
-    <div className="overflow-hidden shadow-xl card bg-base-100">
+    <div
+      data-aos="fade-down"
+      data-aos-duration="2000"
+      className="overflow-hidden shadow-xl card bg-base-100"
+    >
       <div>
         <figure>
           <img

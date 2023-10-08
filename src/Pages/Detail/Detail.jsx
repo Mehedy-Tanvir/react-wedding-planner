@@ -8,7 +8,7 @@ const Detail = () => {
   const service = data.find((service) => service.id == serviceId);
   if (service) {
     return (
-      <div className="container flex flex-col items-center justify-center px-2 mx-auto">
+      <div className="container flex flex-col items-center justify-center px-2 mx-auto mb-10">
         <img
           className="w-full h-full max-w-[80%] max-h-[80%] object-cover rounded-xl mt-10"
           src={service?.image_details}
@@ -25,7 +25,7 @@ const Detail = () => {
               Price: ${service?.price}
             </h1>
           </div>
-          <h1 className="text-2xl font-bold text-[#111] mt-7">
+          <h1 className="text-2xl font-bold text-[#6C2C71] mt-7">
             {service?.title}
           </h1>
           <p className="mt-4 text-base text-gray-500">

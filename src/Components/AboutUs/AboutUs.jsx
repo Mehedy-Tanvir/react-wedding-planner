@@ -1,4 +1,10 @@
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const AboutUs = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div className="font-sans-serif">
       <div className="py-12">
@@ -19,7 +25,11 @@ const AboutUs = () => {
                 committed to providing you with exceptional service and bringing
                 your vision to life.
               </p>
-              <div className="hidden lg:block relative self-center mt-10 w-[50%] h-[50%]">
+              <div
+                data-aos="flip-left"
+                data-aos-duration="2000"
+                className="hidden lg:block relative self-center mt-10 w-[50%] h-[50%]"
+              >
                 <div className="w-full h-full border-[13px] shadow-2xl rounded-lg z-10 border-white bg-[#6C2C70]"></div>
 
                 <img
@@ -28,7 +38,11 @@ const AboutUs = () => {
                   alt=""
                 />
               </div>
-              <div className="self-center mt-4 lg:hidden">
+              <div
+                data-aos="flip-left"
+                data-aos-duration="2000"
+                className="self-center mt-4 lg:hidden"
+              >
                 <img
                   className="w-full h-full border-[13px] object-cover object-center shadow-2xl rounded-lg border-white bg-[#6C2C70]" //
                   src="/about.jpg"
