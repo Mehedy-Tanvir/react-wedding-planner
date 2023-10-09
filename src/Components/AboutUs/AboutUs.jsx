@@ -3,7 +3,9 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 const AboutUs = () => {
   useEffect(() => {
-    Aos.init();
+    setTimeout(() => {
+      Aos.init();
+    }, 3000);
   }, []);
   return (
     <div className="font-sans-serif">

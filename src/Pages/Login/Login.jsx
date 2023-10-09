@@ -11,7 +11,13 @@ const Login = () => {
   const location = useLocation();
   const handleGoogleSignIn = () => {
     googleSignIn()
-      .then(navigate("/"))
+      .then(() => {
+        if (location.state) {
+          navigate(location.state);
+        } else {
+          navigate("/");
+        }
+      })
       .catch((error) => console.log(error));
   };
 

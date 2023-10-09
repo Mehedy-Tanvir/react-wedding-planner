@@ -6,11 +6,13 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 const CardService = ({ service }) => {
   useEffect(() => {
-    Aos.init();
+    setTimeout(() => {
+      Aos.init();
+    }, 3000);
   }, []);
   return (
     <div
-      data-aos="fade-down"
+      data-aos="zoom-in"
       data-aos-duration="2000"
       className="overflow-hidden shadow-xl card bg-base-100"
     >

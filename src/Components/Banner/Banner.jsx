@@ -3,7 +3,9 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 const Banner = () => {
   useEffect(() => {
-    Aos.init();
+    setTimeout(() => {
+      Aos.init();
+    }, 3000);
   }, []);
   return (
     <div

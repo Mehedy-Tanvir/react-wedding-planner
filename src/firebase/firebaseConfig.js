@@ -6,13 +6,15 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+const all = import.meta.env;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBNCDM3fTAZqpmUD75BrEEoHjOf8B3ZKuE",
-  authDomain: "wedding-instaplanner.firebaseapp.com",
-  projectId: "wedding-instaplanner",
-  storageBucket: "wedding-instaplanner.appspot.com",
-  messagingSenderId: "392122870147",
-  appId: "1:392122870147:web:03b0f8d341112fc1182eb6",
+  apiKey: all.VITE_apiKey,
+  authDomain: all.VITE_authDomain,
+  projectId: all.VITE_projectId,
+  storageBucket: all.VITE_storageBucket,
+  messagingSenderId: all.VITE_messagingSenderId,
+  appId: all.VITE_appId,
 };
 
 // Initialize Firebase
