@@ -9,7 +9,7 @@ const Payment = () => {
     navigate("/");
   };
   return (
-    <div className="container px-2 mx-auto">
+    <div className="container h-screen px-2 mx-auto">
       <Toaster />
       <div className="hero">
         <div className="flex-col hero-content">
